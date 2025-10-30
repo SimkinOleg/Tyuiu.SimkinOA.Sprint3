@@ -5,13 +5,14 @@ namespace Tyuiu.SimkinOA.Sprint3.Task1.V10.Lib
     {
         public double GetSumSeries(int value, int startValue, int stopValue)
         {
-            double sumSeries = 1;
-            while (startValue <= stopValue)
+            int i = startValue;
+            double s = 0;
+            while (i <= stopValue)
             {
-                sumSeries = sumSeries + (Math.Pow(1 / (startValue + Math.Pow(value, startValue)), startValue));
-                startValue++;
+                s += Math.Pow((1.0 / (i + Math.Pow(value, i))), i);
+                i++;
             }
-            return Math.Round(sumSeries, 3);
+            return Math.Round(s, 3);
         }
     }
 }
