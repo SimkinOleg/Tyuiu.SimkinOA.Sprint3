@@ -6,14 +6,15 @@ namespace Tyuiu.Simkin.Sprint3.Task0.V18.Lib
     {
         public double GetMultiplySeries(int value, int startValue, int stopValue)
         {
-            double multSeries = 1;
-            int i;
-            for (i = startValue; i <= stopValue; i++)
+            double p = 1;
+
+            for (int k = startValue; k <= stopValue; k++)
             {
-                multSeries = multSeries + (Math.Pow((2 / (Math.Cos(value) + 0.5)), startValue));
-                startValue++;
+                
+                p *= Math.Pow(2 / (Math.Cos(value) + 0.5), k);
             }
-            return Math.Round(multSeries, 3);
+
+            return Math.Round(p, 3);
         }
     }
 }
